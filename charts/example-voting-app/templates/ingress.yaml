@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+  name: example-voting-app
+spec:
+  rules:
+  - host: example-voting-app-vote.k8s.harbur.io
+    http:
+      paths:
+      - backend:
+          serviceName: vote
+          servicePort: 80
+  - host: example-voting-app-result.k8s.harbur.io
+    http:
+      paths:
+      - backend:
+          serviceName: result
+          servicePort: 80
+  tls:
+  - hosts:
+    - example-voting-app-vote.k8s.harbur.io
+    secretName: example-voting-app-vote.k8s.harbur.io
+  - hosts:
+    - example-voting-app-result.k8s.harbur.io
+    secretName: example-voting-app-result.k8s.harbur.io
