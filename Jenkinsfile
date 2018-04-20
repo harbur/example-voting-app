@@ -1,2 +1,2 @@
 #!groovy
-init{}
+kubernetic{}
