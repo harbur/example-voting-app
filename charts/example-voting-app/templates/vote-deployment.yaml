@@ -10,5 +10,5 @@ spec:
         app: vote
     spec:
       containers:
-      - image: docker.k8s.harbur.io/example-voting-app-vote:{{ .Chart.AppVersion }}
+      - image: docker.pro.harbur.io/example-voting-app-vote:{{ .Chart.AppVersion }}
         name: vote

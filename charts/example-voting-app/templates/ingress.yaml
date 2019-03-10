@@ -7,13 +7,13 @@ metadata:
   name: example-voting-app
 spec:
   rules:
-  - host: example-voting-app-vote.k8s.harbur.io
+  - host: example-voting-app-vote.pro.harbur.io
     http:
       paths:
       - backend:
           serviceName: vote
           servicePort: 80
-  - host: example-voting-app-result.k8s.harbur.io
+  - host: example-voting-app-result.pro.harbur.io
     http:
       paths:
       - backend:
@@ -21,8 +21,8 @@ spec:
           servicePort: 80
   tls:
   - hosts:
-    - example-voting-app-vote.k8s.harbur.io
-    secretName: example-voting-app-vote.k8s.harbur.io
+    - example-voting-app-vote.pro.harbur.io
+    secretName: example-voting-app-vote.pro.harbur.io
   - hosts:
-    - example-voting-app-result.k8s.harbur.io
-    secretName: example-voting-app-result.k8s.harbur.io
+    - example-voting-app-result.pro.harbur.io
+    secretName: example-voting-app-result.pro.harbur.io

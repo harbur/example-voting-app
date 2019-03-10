@@ -10,5 +10,5 @@ spec:
         app: result
     spec:
       containers:
-      - image: docker.k8s.harbur.io/example-voting-app-result:{{ .Chart.AppVersion }}
+      - image: docker.pro.harbur.io/example-voting-app-result:{{ .Chart.AppVersion }}
         name: result
