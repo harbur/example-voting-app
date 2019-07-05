@@ -1,4 +1,25 @@
-captain:
-  - captain.yml
+docker:
+  - path: Dockerfile
+    context: result
+    image: woven-computing-234012/example-voting-app/result
+    tags:
+      - ${GIT_BRANCH}
+      - ${GIT_COMMIT_SHORT}
+      - ${GIT_BRANCH}-${BUILD_NUMBER}
+  - path: Dockerfile
+    context: vote
+    image: woven-computing-234012/example-voting-app/vote
+    tags:
+      - ${GIT_BRANCH}
+      - ${GIT_COMMIT_SHORT}
+      - ${GIT_BRANCH}-${BUILD_NUMBER}
+  - path: Dockerfile
+    context: worker
+    image: woven-computing-234012/example-voting-app/worker
+    tags:
+      - ${GIT_BRANCH}
+      - ${GIT_COMMIT_SHORT}
+      - ${GIT_BRANCH}-${BUILD_NUMBER}
+
 charts:
   - charts/example-voting-app

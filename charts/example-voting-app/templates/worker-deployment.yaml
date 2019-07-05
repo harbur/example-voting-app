@@ -10,5 +10,5 @@ spec:
         app: worker
     spec:
       containers:
-      - image: docker.pro.harbur.io/example-voting-app-worker:{{ .Chart.AppVersion }}
+      - image: eu.gcr.io/woven-computing-234012/example-voting-app/worker:{{ .Chart.AppVersion }}
         name: worker
