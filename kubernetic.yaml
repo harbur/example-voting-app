@@ -1,21 +1,21 @@
-docker:
-  - path: result/Dockerfile
+images:
+  - name: woven-computing-234012/example-voting-app/result
+    path: result/Dockerfile
     context: result
-    image: woven-computing-234012/example-voting-app/result
     tags:
       - ${GIT_BRANCH}
       - ${GIT_COMMIT_SHORT}
       - ${GIT_BRANCH}-${BUILD_NUMBER}
-  - path: vote/Dockerfile
+  - name: woven-computing-234012/example-voting-app/vote
+    path: vote/Dockerfile
     context: vote
-    image: woven-computing-234012/example-voting-app/vote
     tags:
       - ${GIT_BRANCH}
       - ${GIT_COMMIT_SHORT}
       - ${GIT_BRANCH}-${BUILD_NUMBER}
-  - path: worker/Dockerfile
+  - name: woven-computing-234012/example-voting-app/worker
+    path: worker/Dockerfile
     context: worker
-    image: woven-computing-234012/example-voting-app/worker
     tags:
       - ${GIT_BRANCH}
       - ${GIT_COMMIT_SHORT}
