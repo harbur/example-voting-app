@@ -1,4 +1,4 @@
-Example Voting App
+Example Voting App [![CI](https://github.com/harbur/example-voting-app/workflows/CI/badge.svg)](https://github.com/harbur/example-voting-app/actions)
 =========
 
 Getting started
