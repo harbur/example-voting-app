@@ -37,5 +37,5 @@ example-voting-app-result:
 redis:
   usePassword: false
 
-posgresql:
+postgresql:
   postgresqlPassword: uoJ8gAt02p
