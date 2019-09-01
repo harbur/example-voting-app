@@ -62,4 +62,5 @@ jobs:
         helm repo add chartmuseum https://chartmuseum.pro.harbur.io --username $HELM_USERNAME --password $HELM_PASSWORD
     - name: Upgrade Release
       run: |
-        helm upgrade example-voting-app-dev charts/example-voting-app
+        helm dep up envs/dev
+        helm upgrade dev envs/dev
