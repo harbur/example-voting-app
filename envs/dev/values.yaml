@@ -13,7 +13,13 @@ example-voting-app-vote:
       hosts:
       - example-voting-app-vote.pro.harbur.io
 
+example-voting-app-worker:
+  db:
+    password: uoJ8gAt02p
+
 example-voting-app-result:
+  db:
+    password: uoJ8gAt02p
   ingress:
     enabled: true
     annotations:
@@ -30,3 +36,6 @@ example-voting-app-result:
 
 redis:
   usePassword: false
+
+posgresql:
+  postgresqlPassword: uoJ8gAt02p
