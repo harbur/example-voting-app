@@ -1,0 +1,32 @@
+example-voting-app-vote:
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      kubernetes.io/tls-acme: "true"
+    hosts:
+      - host: example-voting-app-vote.pro.harbur.io
+        paths:
+        - /
+    tls:
+    - secretName: example-voting-app-vote.pro.harbur.io-tls
+      hosts:
+      - example-voting-app-vote.pro.harbur.io
+
+example-voting-app-result:
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      kubernetes.io/tls-acme: "true"
+    hosts:
+      - host: example-voting-app-result.pro.harbur.io
+        paths:
+        - /
+    tls:
+    - secretName: example-voting-app-result.pro.harbur.io-tls
+      hosts:
+      - example-voting-app-result.pro.harbur.io
+
+redis:
+  usePassword: false

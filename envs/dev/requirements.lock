@@ -1,0 +1,15 @@
+dependencies:
+- name: example-voting-app-vote
+  repository: https://chartmuseum.pro.harbur.io
+  version: 0.1.0
+- name: example-voting-app-result
+  repository: https://chartmuseum.pro.harbur.io
+  version: 0.1.0
+- name: example-voting-app-worker
+  repository: https://chartmuseum.pro.harbur.io
+  version: 0.1.0
+- name: redis
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 9.1.3
+digest: sha256:d5dc7e014bccd19c657852692a6e2f97de9790163f67fc4ed3eca2508e002c38
+generated: "2019-09-01T20:50:11.488591+02:00"

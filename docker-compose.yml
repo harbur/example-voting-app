@@ -27,7 +27,9 @@ services:
       - back-tier
 
   worker:
-    build: ./worker
+    build:
+      context: ./worker
+      dockerfile: Dockerfile.j
     image: eu.gcr.io/woven-computing-234012/example-voting-app/worker:master
     depends_on:
       - "redis"
