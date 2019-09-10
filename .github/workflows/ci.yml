@@ -38,29 +38,3 @@ jobs:
         for folder in charts/*/; do
           helm push $folder chartmuseum
         done
-  create-releases:
-    runs-on: ubuntu-latest
-    needs:
-    - create-images
-    - create-charts
-    steps:
-    - uses: actions/checkout@v1
-    - name: GCloud Authenatication
-      env:
-        GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
-      run: |
-        echo "$GCLOUD_AUTH" | base64 --decode > "$HOME"/gcloud.json
-        gcloud auth activate-service-account --key-file=$HOME/gcloud.json
-        gcloud config set project woven-computing-234012
-        gcloud container clusters get-credentials internal -z europe-west1-b
-    - name: Setup Repositories
-      env:
-        HELM_USERNAME: ${{ secrets.HELM_USERNAME }}
-        HELM_PASSWORD: ${{ secrets.HELM_PASSWORD }}
-      run: |
-        helm init -c
-        helm repo add chartmuseum https://chartmuseum.pro.harbur.io --username $HELM_USERNAME --password $HELM_PASSWORD
-    - name: Upgrade Release
-      run: |
-        helm dep up envs/dev
-        helm upgrade dev envs/dev
